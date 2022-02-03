@@ -1,28 +1,28 @@
-// import { gsap } from "gsap";
+import { gsap } from "gsap";
 
-// import { GSDevTools } from "gsap/GSDevTools";
-// import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-// import { CustomEase } from "gsap/CustomEase";
-// import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
-// import {ScrollTrigger} from "gsap/ScrollTrigger";
-// import {scrollPage} from "./pageScroll"
-
+import { GSDevTools } from "gsap/GSDevTools";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { CustomEase } from "gsap/CustomEase";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import {scrollPage} from "./pageScroll"
 
 
 
 
-// import {demoThing} from"./scrollAnimation"
-// import {photoTrigger} from"./scrollAnimation"
-// import {photoTrigger1} from"./scrollAnimation"
-// import {photoTrigger2} from"./scrollAnimation"
-// import {photoTrigger3} from"./scrollAnimation"
-// import {photoTrigger4} from"./scrollAnimation"
-// import { burgerTL } from "./burgerAnimation"
+
+import {demoThing} from"./scrollAnimation"
+import {photoTrigger} from"./scrollAnimation"
+import {photoTrigger1} from"./scrollAnimation"
+import {photoTrigger2} from"./scrollAnimation"
+import {photoTrigger3} from"./scrollAnimation"
+import {photoTrigger4} from"./scrollAnimation"
+import { burgerTL } from "./burgerAnimation"
 
 // import {demo2} from "./burgerAnimation"
 import { displayWindowSize } from "./mobileResizing.js";
 import { buttonClicks, buttonMouseEvents } from "./burgerAnimation"
-// import {moveMenuOnLoad} from "./mobileMenu";
+import {moveMenuOnLoad} from "./mobileMenu";
+import {menuAnimation} from "./mobileMenu";
 
 
 window.addEventListener('load', function(){
@@ -30,13 +30,15 @@ window.addEventListener('load', function(){
     displayWindowSize();
     buttonMouseEvents();
     buttonClicks();
-    // photoTrigger ();
-    // photoTrigger1 ();
-    // photoTrigger2 ();
-    // photoTrigger3 ();
-    // photoTrigger4 ();
-    // burgerTL ();
-    // moveMenuOnLoad ();
+    demoThing();
+    photoTrigger ();
+    photoTrigger1 ();
+    photoTrigger2 ();
+    photoTrigger3 ();
+    photoTrigger4 ();
+    burgerTL ();
+    moveMenuOnLoad ();
+    menuAnimation ();
     // demo2();
     
     
@@ -45,43 +47,43 @@ window.addEventListener('load', function(){
 });
 
 
-// var burgerButton = document.querySelector("#burger");
+var burgerButton = document.querySelector("#burger");
 
-// let canIseeMenu = false;
+let canIseeMenu = false;
 
 
-// function openCloseMenu(){
-//     if(canIseeMenu === false){
+function openCloseMenu(){
+    if(canIseeMenu === false){
        
-//         burgerTL.play();
-//         menuAnimation.play();
-//         canIseeMenu = true;
-//     }else{
+        burgerTL.play();
+        menuAnimation.play();
+        canIseeMenu = true;
+    }else{
       
-//         burgerTL.reverse();
-//         menuAnimation.reverse();
-//         canIseeMenu = false;
-//     }
-// }
+        burgerTL.reverse();
+        menuAnimation.reverse();
+        canIseeMenu = false;
+    }
+}
 
-// burgerButton.addEventListener("click", openCloseMenu);
+burgerButton.addEventListener("click", openCloseMenu);
 
-// let navButtons = document.querySelectorAll(".nav-btns");
+let navButtons = document.querySelectorAll(".nav-btns");
 
-// for (const button of navButtons){
-//    button.addEventListener("click", checkScrolling);
-//     button.addEventListener("click", openCloseMenu);
-// }
+for (const button of navButtons){
+   button.addEventListener("click", checkScrolling);
+    button.addEventListener("click", openCloseMenu);
+}
 
 
 
-// function checkScrolling(e) {
+function checkScrolling(e) {
    
-// const indexValue = [].indexOf.call(navButtons, e.target)
-//   if (indexValue != -1) {
-//      scrollPage(indexValue);
-//   }
-// }
+const indexValue = [].indexOf.call(navButtons, e.target)
+  if (indexValue != -1) {
+     scrollPage(indexValue);
+  }
+}
 
 
 
@@ -91,7 +93,7 @@ window.addEventListener('load', function(){
 
 
 
-// gsap.registerPlugin(GSDevTools, DrawSVGPlugin, CustomEase, MorphSVGPlugin);
+gsap.registerPlugin(GSDevTools, DrawSVGPlugin, CustomEase, MorphSVGPlugin);
 
 // MorphSVGPlugin.convertToPath("Coffee_2, Vector, Vector6, top, Sauce, Cup, Vector33");
 
@@ -227,7 +229,7 @@ window.addEventListener('load', function(){
 
 // GSDevTools.create();
 
-// window.addEventListener('load', displayWindowSize); 
+window.addEventListener('load', displayWindowSize); 
 window.addEventListener("resize", displayWindowSize);
 
 
