@@ -1,0 +1,128 @@
+#hero{
+
+
+    height: 130vh;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 60px;
+
+    include xl{
+        display: grid;
+        grid-template-areas: ". hero .";
+        grid-template-columns: auto 2500px auto;
+    }
+
+   >div{
+
+    #glow{
+
+        img{
+           position: absolute;
+           display: flex;
+           width: 1835.24px;
+           height: 1200.12px;
+           left: -86px;
+           top: -597px;
+           
+          
+            }
+    }
+
+    align-items: center;
+    background-image: url("../img/hero/Hero2.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 100%;
+
+    position: relative;
+    
+
+    @include xl{
+        grid-area: hero;
+    } 
+
+    #glow{
+        position: absolute;
+        top: 0;
+        left:0;
+        width: 100%;
+        border: none;
+        background-image: url("../img/glow/Vibrance 1.png");
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+    }
+
+    article{
+
+        #hero-content{
+
+            color: black;
+            text-align: left;
+           padding-left: 20px;
+           padding-top: 700px;
+    
+           h1{
+            font-family: 'Work Sans', sans-serif;
+          
+            font-weight: 500;
+            
+    
+            @include md{
+                font-size: rem-calc(70);
+    
+            }
+    
+            @include lg{
+                font-size: rem-calc(90);
+    
+            }
+    
+            
+           }
+    
+           h2{
+            font-family: 'Exo 2', sans-serif;
+        
+            font-size: rem-calc(20);
+            padding-left: 10px;
+          
+            font-weight: 300;
+            text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+    
+            @include md{
+                font-size: rem-calc(20);
+    
+            }
+    
+            @include lg{
+                font-size: rem-calc(30);
+    
+            }
+    
+            
+           }
+
+
+    }
+
+    
+
+      
+
+
+    }
+
+    
+    }
+
+
+  }
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+#background{
+  
+
+
+    ul{
+       
+        
+        
+        grid-area: back;
+
+        
+        @include md{
+           
+            display: grid;
+            grid-template-columns: 50% auto; 
+            grid-template-areas: 
+            "sec3 more"
+            
+                }
+
+                #sec3{
+
+                    img{
+                       
+                        margin-bottom: -4px;
+                    }
+                    
+            
+            
+                }
+
+                #more{
+
+                    padding-top: 30px;
+
+                    h2{
+                        font-family: 'Work Sans', sans-serif;
+                  
+                        font-weight: 400;
+                    
+                        text-align: right;
+                        padding-bottom: 20px;
+                        padding-top: 40px;
+                        padding-right: 120px;
+                        font-size: 30px;
+            
+                        @include md{
+                            font-size: 30px;
+                        }
+            
+                        
+            
+                    }
+                        
+                    }
+                    
+            
+                    p{
+                        font-size: 18px;
+                        text-align: justify;
+                        padding-right: 120px;
+                        padding-left: 65px;
+                        
+                        
+                        line-height: 30px;
+                        
+            
+                        
+                    }
+            
+            
+                }
+
+
+
+
+
+
+
+
+    }
+
+
+
+

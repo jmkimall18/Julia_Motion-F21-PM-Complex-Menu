@@ -1,0 +1,74 @@
+#preloader{
+
+   display: none;
+
+position: absolute;
+height: 100vh;
+width: 100%;
+z-index: 1000;
+background-color: #F7F1F0;
+
+
+>div {
+
+position: absolute;
+display: flex;
+justify-content: center;
+
+align-items: center;
+width: 100%;
+height: 100%;
+
+svg{
+    position: absolute;
+display: flex;
+justify-content: center;
+
+align-items: center;
+width: 100%;
+height: 100%;
+
+border: none;
+
+#Glass{
+    display: flex;
+}
+
+#Coffee{
+    display: none;
+}
+
+#Tea_Cup{
+
+    display: none;
+}
+
+#Coffee_Bean{
+
+    display: none;
+}
+
+#French_Press{
+
+    display: none;
+}
+
+#Coffee_Maker{
+
+    display: none;
+}
+
+
+
+
+
+
+                }
+
+            }
+
+
+
+
+
+              }
