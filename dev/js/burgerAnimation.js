@@ -8,7 +8,7 @@ gsap.registerPlugin(DrawSVGPlugin, ScrambleTextPlugin);
 
 gsap.set(".burger-lines",{transformOrigin:"center"})
 gsap.set(".burger",{transformOrigin:"",duration:0.25, scaleY:6})
-
+gsap.set("#outline2",{drawSVG: "0%"})
 
 
 const topTL = new gsap.timeline();
@@ -38,9 +38,9 @@ gsap.set(".burger-lines",{transformOrigin:"right center"});
 
 
 // let textArray = gsap.utils.toArray(".connect");
-// let navLinks = gsap.utils.toArray("nav a");
+let navLinks = gsap.utils.toArray("nav a");
 // let buttonText = ["Coffee","About","Wholesale","Contact"];
-// let currentLink = 0;
+let currentLink = 0;
 
 
 
@@ -50,97 +50,103 @@ gsap.set(".burger-lines",{transformOrigin:"right center"});
 // 			gsap.set(textArray[i],{scaleX:0})
 // 		}
 // 	});
-// // 	gsap.to(textArray[0], {duration: 0.25, scrambleText: ".connect", ease: "none"})
+// 	gsap.to(textArray[0], {duration: 0.25, scrambleText: ".connect", ease: "none"})
 // }
 
 
-// export function buttonClicks(){
-// 	console.log("clicks");
-// 	menuSetUp();
+export function buttonClicks(){
+	console.log("clicks");
+	// menuSetUp();
 
-//     navLinks.forEach((link, i) => {
-//         link.addEventListener("click", e => {
-//             e.preventDefault();
+    // navLinks.forEach((link, i) => {
+    //     link.addEventListener("click", e => {
+    //         e.preventDefault();
 
-//             console.log(currentLink);
+            console.log(currentLink);
           
-//             gsap.to(window, {scrollTo: i * innerHeight});
+    //         gsap.to(window, {scrollTo: i * innerHeight});
 
-//             console.log(i);
-//             gsap.to(textArray[i], {duration: 0.25, scrambleText: buttonText[i], ease: "none"});
+    //         console.log(i);
+    //         gsap.to(textArray[i], {duration: 0.25, scrambleText: buttonText[i], ease: "none"});
 
 
-//             gsap.to(textArray[currentLink], {duration: 0.25, scrambleText: ".connect", ease: "none"});
+    //         gsap.to(textArray[currentLink], {duration: 0.25, scrambleText: ".connect", ease: "none"});
            
 
-//             currentLink = i;
+    //         currentLink = i;
           
-//         });
-//     });
-// }
+    //     });
+    // });
+}
 
 
-// // export function buttonMouseEvents(){
+export function buttonMouseEvents(){
 
-// //     console.log(navLinks.length);
+    console.log(navLinks.length);
 
-// //     navLinks.forEach((link, i) => {
+    navLinks.forEach((link, i) => {
       
-// //         link.addEventListener("mouseenter", e => {
+        link.addEventListener("mouseenter", e => {
 
-// //             console.log("enter");
-//             // e.preventDefault();
-           
-//             // if(i != currentLink){
-//             //     gsap.to(textArray[i], {duration: 0.25, scrambleText: buttonText[i], ease: "none"});
-               
-//             // }
-//         // });
+            console.log("enter");
+            console.log(burgerBtn.classList.contains("selected"));
+
+          
+            if(!burgerBtn.classList.contains("selected")){
+                burgerTL.play();
+            }
+        });
 
 
        
-//         // link.addEventListener("mouseleave", () => {
-//         //     console.log("leave");
-//             // e.preventDefault();
-//             // if(i != currentLink){
-//             //     gsap.to(textArray[i], {duration: 0.25, scrambleText: ".connect", ease: "none"});
+        link.addEventListener("mouseleave", e => {
+            console.log("leave");
+            // e.preventDefault();
+            // if(i != currentLink){
+            //     gsap.to(textArray[i], {duration: 0.25, scrambleText: ".connect", ease: "none"});
                
-//             // }
-//     //     });
-//     // });
+            // }
+        });
+    });
 
-//     // burger TL goes here
+    // burger TL goes here
 
-// //     let nav = document.querySelector("nav");
+    let nav = document.querySelector("nav");
 
-// //     let canISeeMenu = false;
+    let canISeeMenu = false;
 
-// //     let burgerBtn = document.querySelector("#burger");
-// //     burgerBtn.addEventListener("mouseenter", () => {
-// //         console.log("burger mouse enter");
-// //         // code for burger mouse leave..... bugerTL.play()
-// //     })
+    let burgerBtn = document.querySelector("#burger");
+    burgerBtn.addEventListener("mouseenter", e => {
+        console.log("burger mouse enter");
+        // code for burger mouse leave..... 
 
-// //     burgerBtn.addEventListener("mouseleave", () => {
-// //         console.log("burger mouse leave");
-// //         // code for burger mouse leave..... bugerTL.reverse()
-// //     })
+        bugerTL.play();
+    })
 
-// //     burgerBtn.addEventListener("click", () => {
-// //         console.log("burger click");
-
-// //         if(canISeeMenu === false){
-// //             gsap.to(nav,{x:0});
-// //             canISeeMenu = true;
-// //         }else{
-// //             gsap.to(nav,{x:nav.offsetWidth});
-// //             canISeeMenu = false;
-// //         }
+    burgerBtn.addEventListener("mouseleave", e => {
+        console.log("burger mouse leave");
+        // code for burger mouse leave..... 
         
-// //         // code for burger mouse leave..... bugerTL.reverse()
-// //     })
+        bugerTL.reverse();
+    })
 
-// // }
+    burgerBtn.addEventListener("click", e => {
+        console.log("burger click");
+
+        if(canISeeMenu === false){
+            gsap.to(nav,{x:0});
+            canISeeMenu = true;
+        }else{
+            gsap.to(nav,{x:nav.offsetWidth});
+            canISeeMenu = false;
+        }
+        
+        // code for burger mouse leave..... 
+        
+        bugerTL.reverse();
+    })
+
+}
 
 
 
@@ -149,6 +155,6 @@ burgerTL.add(topTL,"burger")
     .add(bottomTL,"burger")
     .add(middleTL,"burger")
 
-//     export function demo2(){}
+//     export function demo2(){
        
-//       
+//        }

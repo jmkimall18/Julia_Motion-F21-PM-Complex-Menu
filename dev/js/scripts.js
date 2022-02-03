@@ -1,9 +1,10 @@
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
-import { GSDevTools } from "gsap/GSDevTools";
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { CustomEase } from "gsap/CustomEase";
-import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+// import { GSDevTools } from "gsap/GSDevTools";
+// import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+// import { CustomEase } from "gsap/CustomEase";
+// import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+
 import {scrollPage} from "./pageScroll"
 
 
@@ -18,13 +19,12 @@ import {photoTrigger3} from"./scrollAnimation"
 import {photoTrigger4} from"./scrollAnimation"
 import { burgerTL } from "./burgerAnimation"
 
-// import {demo2} from "./burgerAnimation"
+import {demo2} from "./burgerAnimation"
 import { displayWindowSize } from "./mobileResizing.js";
 import { buttonClicks, buttonMouseEvents } from "./burgerAnimation"
-import {moveMenuOnLoad} from "./mobileMenu";
-import {menuAnimation} from "./mobileMenu";
+// import {moveMenuOnLoad} from "./mobileMenu";
 
-
+demoThing ();
 window.addEventListener('load', function(){
 
     displayWindowSize();
@@ -37,9 +37,9 @@ window.addEventListener('load', function(){
     photoTrigger3 ();
     photoTrigger4 ();
     burgerTL ();
-    moveMenuOnLoad ();
-    menuAnimation ();
-    // demo2();
+    // moveMenuOnLoad ();
+    scrollPage ();
+    demo2();
     
     
    
@@ -47,43 +47,43 @@ window.addEventListener('load', function(){
 });
 
 
-var burgerButton = document.querySelector("#burger");
+// var burgerButton = document.querySelector("#burger");
 
-let canIseeMenu = false;
+// let canIseeMenu = false;
 
 
-function openCloseMenu(){
-    if(canIseeMenu === false){
+// function openCloseMenu(){
+//     if(canIseeMenu === false){
        
-        burgerTL.play();
-        menuAnimation.play();
-        canIseeMenu = true;
-    }else{
+//         burgerTL.play();
+//         menuAnimation.play();
+//         canIseeMenu = true;
+//     }else{
       
-        burgerTL.reverse();
-        menuAnimation.reverse();
-        canIseeMenu = false;
-    }
-}
+//         burgerTL.reverse();
+//         menuAnimation.reverse();
+//         canIseeMenu = false;
+//     }
+// }
 
-burgerButton.addEventListener("click", openCloseMenu);
+// burgerButton.addEventListener("click", openCloseMenu);
 
-let navButtons = document.querySelectorAll(".nav-btns");
+// let navButtons = document.querySelectorAll(".nav-btns");
 
-for (const button of navButtons){
-   button.addEventListener("click", checkScrolling);
-    button.addEventListener("click", openCloseMenu);
-}
+// for (const button of navButtons){
+//    button.addEventListener("click", checkScrolling);
+//     button.addEventListener("click", openCloseMenu);
+// }
 
 
 
-function checkScrolling(e) {
+// function checkScrolling(e) {
    
-const indexValue = [].indexOf.call(navButtons, e.target)
-  if (indexValue != -1) {
-     scrollPage(indexValue);
-  }
-}
+// const indexValue = [].indexOf.call(navButtons, e.target)
+//   if (indexValue != -1) {
+//      scrollPage(indexValue);
+//   }
+// }
 
 
 
@@ -93,7 +93,7 @@ const indexValue = [].indexOf.call(navButtons, e.target)
 
 
 
-gsap.registerPlugin(GSDevTools, DrawSVGPlugin, CustomEase, MorphSVGPlugin);
+// gsap.registerPlugin(GSDevTools, DrawSVGPlugin, CustomEase, MorphSVGPlugin);
 
 // MorphSVGPlugin.convertToPath("Coffee_2, Vector, Vector6, top, Sauce, Cup, Vector33");
 
