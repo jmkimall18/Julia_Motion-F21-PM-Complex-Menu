@@ -19,7 +19,7 @@ import {photoTrigger3} from"./scrollAnimation"
 import {photoTrigger4} from"./scrollAnimation"
 import { burgerTL } from "./burgerAnimation"
 
-import {demo2} from "./burgerAnimation"
+// import {demo2} from "./burgerAnimation"
 import { displayWindowSize } from "./mobileResizing.js";
 import { buttonClicks, buttonMouseEvents } from "./burgerAnimation"
 // import {moveMenuOnLoad} from "./mobileMenu";
@@ -39,7 +39,7 @@ window.addEventListener('load', function(){
     burgerTL ();
     // moveMenuOnLoad ();
     scrollPage ();
-    demo2();
+    // demo2();
     
     
    
@@ -229,7 +229,7 @@ window.addEventListener('load', function(){
 
 // GSDevTools.create();
 
-window.addEventListener('load', displayWindowSize); 
+// window.addEventListener('load', displayWindowSize); 
 window.addEventListener("resize", displayWindowSize);
 
 

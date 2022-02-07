@@ -11,6 +11,7 @@ gsap.set(".burger",{transformOrigin:"",duration:0.25, scaleY:6})
 gsap.set("#outline2",{drawSVG: "0%"})
 
 
+
 const topTL = new gsap.timeline();
 topTL.to(".burger-lines:nth-child(1)",{duration:0.25, y:"+=30", scaleX:6})
 .to(".burger-lines:nth-child(1)",{duration:0.25, rotation:90})
@@ -29,8 +30,19 @@ middleTL.to(".burger3:nth-child(2)",{duration:0.25, scale:0})
 .from("#card-2",{duration: .25,opacity: 0, ease:"fadein"})
 .from("#card-1",{duration: .25,opacity: 0, ease:"fadein"})
 
+const menu1TL = new gsap.timeline();
+menu1TL.to("h3",{scale:1.1})
+
+
+
 
 export const burgerTL = new gsap.timeline({paused:true});
+
+export const menuAnimation = new gsap.timeline({paused:true});
+
+export const menuAnimation2 = new gsap.timeline({paused:true});
+// menuAnimation.to("#nav-container",{duration:0.5, y:0, x:0});
+
 
 
 gsap.set(".burger-lines",{transformOrigin:"right center"});
@@ -94,6 +106,9 @@ export function buttonMouseEvents(){
           
             if(!burgerBtn.classList.contains("selected")){
                 burgerTL.play();
+                menuAnimation.play();
+                menuAnimation2.play();
+                
             }
         });
 
@@ -101,6 +116,17 @@ export function buttonMouseEvents(){
        
         link.addEventListener("mouseleave", e => {
             console.log("leave");
+
+            console.log(burgerBtn.classList.contains("selected"));
+
+          
+            if(!burgerBtn.classList.contains("selected")){
+                // burgerTL.play();
+                // menuAnimation.play();
+                menuAnimation2.reverse();
+                
+            }
+            
             // e.preventDefault();
             // if(i != currentLink){
             //     gsap.to(textArray[i], {duration: 0.25, scrambleText: ".connect", ease: "none"});
@@ -119,15 +145,17 @@ export function buttonMouseEvents(){
     burgerBtn.addEventListener("mouseenter", e => {
         console.log("burger mouse enter");
         // code for burger mouse leave..... 
-
-        bugerTL.play();
+        menuAnimation.play();
+        burgerTL.play();
+        
     })
 
     burgerBtn.addEventListener("mouseleave", e => {
         console.log("burger mouse leave");
         // code for burger mouse leave..... 
+        menuAnimation.reverse();
         
-        bugerTL.reverse();
+        burgerTL.reverse();
     })
 
     burgerBtn.addEventListener("click", e => {
@@ -136,14 +164,20 @@ export function buttonMouseEvents(){
         if(canISeeMenu === false){
             gsap.to(nav,{x:0});
             canISeeMenu = true;
+            menuAnimation.play();
+           
+            burgerTL.play();
         }else{
             gsap.to(nav,{x:nav.offsetWidth});
             canISeeMenu = false;
+            menuAnimation.reverse();
+            
+            burgerTL.reverse();
         }
         
         // code for burger mouse leave..... 
         
-        bugerTL.reverse();
+       
     })
 
 }
@@ -154,6 +188,10 @@ export function buttonMouseEvents(){
 burgerTL.add(topTL,"burger")
     .add(bottomTL,"burger")
     .add(middleTL,"burger")
+
+
+menuAnimation2.add(menu1TL,"h3")
+   
 
 //     export function demo2(){
        

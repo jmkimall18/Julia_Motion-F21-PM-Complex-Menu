@@ -586,6 +586,9 @@ header > div #nav-container ul li {
   header > div #nav-container ul li h3 {
     display: none;
   }
+  header > div #nav-container ul li h4 {
+    display: none;
+  }
 }
 header > div #nav-container ul #card-1 {
   background-color: #fddbae;
@@ -601,6 +604,13 @@ header > div #nav-container ul #card-1 h3 {
   font-family: "Work Sans";
   font-size: 3.75rem;
   font-weight: 240;
+}
+header > div #nav-container ul #card-1 h4 {
+  color: black;
+  font-family: "Work Sans";
+  font-size: 1rem;
+  font-weight: 240;
+  margin-top: 30px;
 }
 header > div #nav-container ul #card-1 button {
   background-color: transparent;
@@ -632,6 +642,13 @@ header > div #nav-container ul #card-2 h3 {
   font-size: 3.75rem;
   font-weight: 240;
 }
+header > div #nav-container ul #card-2 h4 {
+  color: black;
+  font-family: "Work Sans";
+  font-size: 1rem;
+  font-weight: 240;
+  margin-top: 30px;
+}
 header > div #nav-container ul #card-2 button {
   background-color: transparent;
   color: black;
@@ -662,6 +679,13 @@ header > div #nav-container ul #card-3 h3 {
   font-size: 3.75rem;
   font-weight: 240;
 }
+header > div #nav-container ul #card-3 h4 {
+  color: black;
+  font-family: "Work Sans";
+  font-size: 1rem;
+  font-weight: 240;
+  margin-top: 30px;
+}
 header > div #nav-container ul #card-3 button {
   background-color: transparent;
   color: black;
@@ -686,6 +710,13 @@ header > div #nav-container ul #card-4 h3 {
   font-family: "Work Sans";
   font-size: 3.75rem;
   font-weight: 240;
+}
+header > div #nav-container ul #card-4 h4 {
+  color: black;
+  font-family: "Work Sans";
+  font-size: 1rem;
+  font-weight: 240;
+  margin-top: 30px;
 }
 header > div #nav-container ul #card-4 button {
   background-color: transparent;
