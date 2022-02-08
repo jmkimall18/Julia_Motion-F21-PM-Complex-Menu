@@ -52,16 +52,18 @@ export const menuAnimation5 = new gsap.timeline({paused:true});
 export const menuAnimation6 = new gsap.timeline({paused:true});
 
 // menuAnimation2.to("#card-1",{background:"#5e4c30"})
+menuAnimation2.to("#card-1",{background:"#FFF0D7"})
+menuAnimation3.to("#card-2",{background: "#FFF0D7"})
+menuAnimation4.to("#card-3",{background: "#FFF0D7"})
+menuAnimation5.to("#card-4",{background: "#FFF0D7"})
 
-menuAnimation3.to("#card-2",{background: "#ffffff"})
-menuAnimation4.to("#card-3",{background: "#ffffff"})
-menuAnimation5.to("#card-4",{background: "#ffffff"})
-menuAnimation2.to("#card-1",{background:"#ffffff"})
 
 
 menuAnimation6.to("h3",{scale:1.1, rotation:30, color:"#5e4c30", y:"-=200"})
-.to("button",{scale:1.1})
-.from("h4",{duration: 1,opacity: 0, y:"+=800", alpha:0})
+.from("button",{x:"+=1000"})
+.from("button",{scale:1.5})
+.from("h4",{duration: 1, y:"+=800", alpha:0})
+// .to("h4",{background:"#fcebd1", outerWidth: 100})
 
 
 
@@ -79,6 +81,7 @@ let textArray = gsap.utils.toArray(".connect");
 let navLinks = gsap.utils.toArray("nav a");
 let currentLink = 0;
 
+
 function menuSetUp(){
 	navLinks.forEach((link, i) => {
 		if(i !== 0){
@@ -86,7 +89,7 @@ function menuSetUp(){
             
 		}
 	});
-	// gsap.to(textArray[0], {duration: 0.25, scrambleText: ".connect", ease: "none"})
+	
 }
 
 
@@ -173,7 +176,7 @@ export function buttonMouseEvents(){
         });
     });
 
-    // burger TL goes here
+    
 
     let nav = document.querySelector("nav");
 
@@ -265,6 +268,4 @@ burgerTL.add(topTL,"burger")
 
 
 
-//     export function demo2(){
-       
-//        }
+
