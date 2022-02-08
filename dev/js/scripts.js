@@ -6,11 +6,6 @@
 // import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 import {scrollPage} from "./pageScroll"
-
-
-
-
-
 import {demoThing} from"./scrollAnimation"
 import {photoTrigger} from"./scrollAnimation"
 import {photoTrigger1} from"./scrollAnimation"
@@ -229,7 +224,7 @@ window.addEventListener('load', function(){
 
 // GSDevTools.create();
 
-// window.addEventListener('load', displayWindowSize); 
+window.addEventListener('load', displayWindowSize); 
 window.addEventListener("resize", displayWindowSize);
 
 

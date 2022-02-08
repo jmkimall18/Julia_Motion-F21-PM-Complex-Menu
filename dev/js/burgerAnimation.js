@@ -12,6 +12,7 @@ gsap.set("#outline2",{drawSVG: "0%"})
 
 
 
+
 const topTL = new gsap.timeline();
 topTL.to(".burger-lines:nth-child(1)",{duration:0.25, y:"+=30", scaleX:6})
 .to(".burger-lines:nth-child(1)",{duration:0.25, rotation:90})
@@ -30,8 +31,8 @@ middleTL.to(".burger3:nth-child(2)",{duration:0.25, scale:0})
 .from("#card-2",{duration: .25,opacity: 0, ease:"fadein"})
 .from("#card-1",{duration: .25,opacity: 0, ease:"fadein"})
 
-const menu1TL = new gsap.timeline();
-menu1TL.to("h3",{scale:1.1})
+
+
 
 
 
@@ -41,6 +42,31 @@ export const burgerTL = new gsap.timeline({paused:true});
 export const menuAnimation = new gsap.timeline({paused:true});
 
 export const menuAnimation2 = new gsap.timeline({paused:true});
+
+export const menuAnimation3 = new gsap.timeline({paused:true});
+
+export const menuAnimation4 = new gsap.timeline({paused:true});
+
+export const menuAnimation5 = new gsap.timeline({paused:true});
+
+export const menuAnimation6 = new gsap.timeline({paused:true});
+
+// menuAnimation2.to("#card-1",{background:"#5e4c30"})
+
+menuAnimation3.to("#card-2",{background: "#ffffff"})
+menuAnimation4.to("#card-3",{background: "#ffffff"})
+menuAnimation5.to("#card-4",{background: "#ffffff"})
+menuAnimation2.to("#card-1",{background:"#ffffff"})
+
+
+menuAnimation6.to("h3",{scale:1.1, rotation:30, color:"#5e4c30", y:"-=200"})
+.to("button",{scale:1.1})
+.from("h4",{duration: 1,opacity: 0, y:"+=800", alpha:0})
+
+
+
+
+
 // menuAnimation.to("#nav-container",{duration:0.5, y:0, x:0});
 
 
@@ -49,46 +75,47 @@ gsap.set(".burger-lines",{transformOrigin:"right center"});
 
 
 
-// let textArray = gsap.utils.toArray(".connect");
+let textArray = gsap.utils.toArray(".connect");
 let navLinks = gsap.utils.toArray("nav a");
-// let buttonText = ["Coffee","About","Wholesale","Contact"];
 let currentLink = 0;
 
-
-
-// function menuSetUp(){
-// 	navLinks.forEach((link, i) => {
-// 		if(i !== 0){
-// 			gsap.set(textArray[i],{scaleX:0})
-// 		}
-// 	});
-// 	gsap.to(textArray[0], {duration: 0.25, scrambleText: ".connect", ease: "none"})
-// }
+function menuSetUp(){
+	navLinks.forEach((link, i) => {
+		if(i !== 0){
+			gsap.set(textArray[i],{scaleX:0})
+            
+		}
+	});
+	// gsap.to(textArray[0], {duration: 0.25, scrambleText: ".connect", ease: "none"})
+}
 
 
 export function buttonClicks(){
+
+    
 	console.log("clicks");
-	// menuSetUp();
+	menuSetUp();
 
-    // navLinks.forEach((link, i) => {
-    //     link.addEventListener("click", e => {
-    //         e.preventDefault();
+    navLinks.forEach((link, i) => {
+        link.addEventListener("click", e => {
+            
+            e.preventDefault();
 
-            console.log(currentLink);
+            // console.log(currentLink);
           
-    //         gsap.to(window, {scrollTo: i * innerHeight});
+            gsap.to(window, {scrollTo: i * innerHeight});
 
-    //         console.log(i);
-    //         gsap.to(textArray[i], {duration: 0.25, scrambleText: buttonText[i], ease: "none"});
+            console.log(i);
+            gsap.to(textArray[i], {duration: 0.25, ease: "none"});
 
 
-    //         gsap.to(textArray[currentLink], {duration: 0.25, scrambleText: ".connect", ease: "none"});
+            gsap.to(textArray[currentLink], {duration: 0.25, ease: "none"});
            
 
-    //         currentLink = i;
+            currentLink = i;
           
-    //     });
-    // });
+        });
+    });
 }
 
 
@@ -108,6 +135,10 @@ export function buttonMouseEvents(){
                 burgerTL.play();
                 menuAnimation.play();
                 menuAnimation2.play();
+                menuAnimation3.play();
+                menuAnimation4.play();
+                menuAnimation5.play();
+                menuAnimation6.play();
                 
             }
         });
@@ -121,17 +152,24 @@ export function buttonMouseEvents(){
 
           
             if(!burgerBtn.classList.contains("selected")){
-                // burgerTL.play();
-                // menuAnimation.play();
+                burgerTL.play();
+                menuAnimation.play();
                 menuAnimation2.reverse();
+                menuAnimation3.reverse();
+                menuAnimation4.reverse();
+                menuAnimation5.reverse();
+                menuAnimation6.reverse();
+                
+               
+               
                 
             }
             
-            // e.preventDefault();
-            // if(i != currentLink){
-            //     gsap.to(textArray[i], {duration: 0.25, scrambleText: ".connect", ease: "none"});
+            e.preventDefault();
+            if(i != currentLink){
+                gsap.to(textArray[i], {duration: 0.25, ease: "none"});
                
-            // }
+            }
         });
     });
 
@@ -154,7 +192,6 @@ export function buttonMouseEvents(){
         console.log("burger mouse leave");
         // code for burger mouse leave..... 
         menuAnimation.reverse();
-        
         burgerTL.reverse();
     })
 
@@ -165,6 +202,7 @@ export function buttonMouseEvents(){
             gsap.to(nav,{x:0});
             canISeeMenu = true;
             menuAnimation.play();
+           
            
             burgerTL.play();
         }else{
@@ -185,13 +223,47 @@ export function buttonMouseEvents(){
 
 
 
+// const color23 = document.querySelector("#card-1");
+
+// export function buttonMouseEvents2(){
+
+
+//     color23.addEventListener("mouseenter",() =>{
+//         console.log("enter");
+//         console.log(color23.classList.contains("selected2"));
+
+//         //check to see if the class of selected is on the burger container, and if so don't allow the mouse enter animation
+//         if(!color23.classList.contains("selected2")){
+//             menuAnimation2.play(("#card-1",{background:"#ffffff"}));
+//         }
+//     });
+    
+//     color23.addEventListener("mouseleave",() =>{
+//         console.log("leave");
+//         //check to see if the class of selected is on the burger container, and if so don't allow the mouse enter animation
+//         if(!color23.classList.contains("selected")){
+//             menuAnimation2.reverse();
+//         }
+//     });
+
+
+
+// }
+
+
+
+
+
 burgerTL.add(topTL,"burger")
     .add(bottomTL,"burger")
     .add(middleTL,"burger")
 
 
-menuAnimation2.add(menu1TL,"h3")
-   
+
+
+
+
+
 
 //     export function demo2(){
        

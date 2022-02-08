@@ -608,9 +608,12 @@ header > div #nav-container ul #card-1 h3 {
 header > div #nav-container ul #card-1 h4 {
   color: black;
   font-family: "Work Sans";
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 240;
   margin-top: 30px;
+  padding-left: 10px;
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 header > div #nav-container ul #card-1 button {
   background-color: transparent;
@@ -622,10 +625,6 @@ header > div #nav-container ul #card-1 button {
   position: absolute;
   cursor: pointer;
   border: none;
-}
-header > div #nav-container ul #card-1 button:hover, header > div #nav-container ul #card-1 button:active {
-  color: #5e4c30;
-  font-size: 1.875rem;
 }
 header > div #nav-container ul #card-2 {
   background-color: #fde3be;
@@ -645,9 +644,11 @@ header > div #nav-container ul #card-2 h3 {
 header > div #nav-container ul #card-2 h4 {
   color: black;
   font-family: "Work Sans";
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 240;
   margin-top: 30px;
+  padding-left: 10px;
+  margin-right: 20px;
 }
 header > div #nav-container ul #card-2 button {
   background-color: transparent;
@@ -659,10 +660,6 @@ header > div #nav-container ul #card-2 button {
   position: absolute;
   cursor: pointer;
   border: none;
-}
-header > div #nav-container ul #card-2 button:hover, header > div #nav-container ul #card-2 button:active {
-  color: #5e4c30;
-  font-size: 1.875rem;
 }
 header > div #nav-container ul #card-3 {
   background-color: #fcebd1;
@@ -682,9 +679,11 @@ header > div #nav-container ul #card-3 h3 {
 header > div #nav-container ul #card-3 h4 {
   color: black;
   font-family: "Work Sans";
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 240;
   margin-top: 30px;
+  padding-left: 10px;
+  margin-right: 20px;
 }
 header > div #nav-container ul #card-3 button {
   background-color: transparent;
@@ -696,10 +695,6 @@ header > div #nav-container ul #card-3 button {
   position: absolute;
   cursor: pointer;
   border: none;
-}
-header > div #nav-container ul #card-3 button:hover, header > div #nav-container ul #card-3 button:active {
-  color: #5e4c30;
-  font-size: 1.875rem;
 }
 header > div #nav-container ul #card-4 {
   background-color: #FFF3E1;
@@ -714,9 +709,11 @@ header > div #nav-container ul #card-4 h3 {
 header > div #nav-container ul #card-4 h4 {
   color: black;
   font-family: "Work Sans";
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 240;
   margin-top: 30px;
+  padding-left: 10px;
+  margin-right: 20px;
 }
 header > div #nav-container ul #card-4 button {
   background-color: transparent;
@@ -728,10 +725,6 @@ header > div #nav-container ul #card-4 button {
   position: absolute;
   cursor: pointer;
   border: none;
-}
-header > div #nav-container ul #card-4 button:hover, header > div #nav-container ul #card-4 button:active {
-  color: #5e4c30;
-  font-size: 1.875rem;
 }
 
 #footer {
