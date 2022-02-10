@@ -124,8 +124,10 @@ export function buttonClicks(){
 
 
 
-let infoButtonArray = gsap.utils.toArray("#card-1" );
+let infoButtonArray = gsap.utils.toArray(".card" );
 let Card2Array = gsap.utils.toArray("#card-2" );
+
+let colorArray= ["#fddbae", "#fde3be", "#fcebd1", "#FFF3E1"]
 
 for(var i = 0; i < infoButtonArray.length; i++){
 gsap.set(infoButtonArray[i],{alpha:0});
@@ -151,10 +153,9 @@ for(var i = 0; i < Card2Array.length; i++){
 
 
             gsap.to(infoButtonArray[i],{duration:0.25,background:"#FCF9F4"});
-            
             // gsap.to(Card2Array[i],{duration:0.25,background:"#FCF555"});
             gsap.to("h3",{duration:0.25 ,scale:1.1, rotation:30, color:"#5e4c30"});
-            gsap.to("h4",{duration: 1, y:"0",})
+            gsap.to("h4",{duration: 1, y:"0", alpha:1})
             gsap.to("svg",{duration: .25,opacity: 0, ease:"fadein"})
            
         });
@@ -164,9 +165,8 @@ for(var i = 0; i < Card2Array.length; i++){
         link.addEventListener("mouseleave", () => {
             console.log("leave");
 
-            gsap.to(infoButtonArray[i],{background:"#fddbae"});
-           
-            // gsap.to(Card2Array[i],{background:"#fde3be", altha: 1});
+            gsap.to(infoButtonArray[i],{background:colorArray[i]});
+            // gsap.to(Card2Array[i],{background:"#fde3be"});
             gsap.to("h3",{duration:0.25, scale:0, rotation:0 });
             gsap.to("h4",{duration: 1, y:"800"})
             gsap.to("svg",{duration: .25,opacity: 1, ease:"fadein"})
@@ -175,14 +175,6 @@ for(var i = 0; i < Card2Array.length; i++){
         });
 
         
-
-
-
-
-
-
-
-
 
 
 
