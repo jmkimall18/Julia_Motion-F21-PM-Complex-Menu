@@ -614,7 +614,7 @@ header > div #nav-container ul #card-1 h4 {
   padding-left: 10px;
   margin-right: 20px;
   padding-bottom: 10px;
-  margin-bottom: 10px;
+  margin-bottom: -5px;
 }
 header > div #nav-container ul #card-1 button {
   background-color: transparent;

@@ -33,10 +33,6 @@ middleTL.to(".burger3:nth-child(2)",{duration:0.25, scale:0})
 
 
 
-
-
-
-
 export const burgerTL = new gsap.timeline({paused:true});
 
 export const menuAnimation = new gsap.timeline({paused:true});
@@ -51,18 +47,20 @@ export const menuAnimation5 = new gsap.timeline({paused:true});
 
 export const menuAnimation6 = new gsap.timeline({paused:true});
 
+
+
 // menuAnimation2.to("#card-1",{background:"#5e4c30"})
-menuAnimation2.to("#card-1",{background:"#FFF0D7"})
-menuAnimation3.to("#card-2",{background: "#FFF0D7"})
-menuAnimation4.to("#card-3",{background: "#FFF0D7"})
-menuAnimation5.to("#card-4",{background: "#FFF0D7"})
+menuAnimation2.to("#card-1",{background:"#FCF9F4"})
+menuAnimation3.to("#card-2",{background: "#FCF9F4"})
+menuAnimation4.to("#card-3",{background: "#FCF9F4"})
+menuAnimation5.to("#card-4",{background: "#FCF9F4"})
 
 
 
-menuAnimation6.to("h3",{scale:1.1, rotation:30, color:"#5e4c30", y:"-=200"})
-.from("button",{x:"+=1000"})
-.from("button",{scale:1.5})
-.from("h4",{duration: 1, y:"+=800", alpha:0})
+// menuAnimation6.to("h3",{scale:1.1, rotation:30, color:"#5e4c30", y:"-=200"})
+// .from("button",{y:"+=1000"})
+// .from("button",{scale:1.5})
+// .from("h4",{duration: 1, y:"+=800", alpha:0})
 // .to("h4",{background:"#fcebd1", outerWidth: 100})
 
 
@@ -78,7 +76,7 @@ gsap.set(".burger-lines",{transformOrigin:"right center"});
 
 
 let textArray = gsap.utils.toArray(".connect");
-let navLinks = gsap.utils.toArray("nav a");
+let navLinks = gsap.utils.toArray("nav .card");
 let currentLink = 0;
 
 
@@ -121,29 +119,45 @@ export function buttonClicks(){
     });
 }
 
+let infoButtonArray = gsap.utils.toArray(".card button");
+
+for(var i = 0; i < infoButtonArray.length; i++){
+gsap.set(infoButtonArray[i],{alpha:0});
+}
+
+// let paraArray = ;
+
 
 export function buttonMouseEvents(){
 
     console.log(navLinks.length);
 
     navLinks.forEach((link, i) => {
+
+
+
+
       
-        link.addEventListener("mouseenter", e => {
+        link.addEventListener("mouseenter", () => {
 
             console.log("enter");
             console.log(burgerBtn.classList.contains("selected"));
 
+            gsap.to(infoButtonArray[i],{duration:0.25, alpha:1});
+
           
-            if(!burgerBtn.classList.contains("selected")){
-                burgerTL.play();
-                menuAnimation.play();
-                menuAnimation2.play();
-                menuAnimation3.play();
-                menuAnimation4.play();
-                menuAnimation5.play();
-                menuAnimation6.play();
+            // if(!burgerBtn.classList.contains("selected")){
+            //     burgerTL.play();
+            //     menuAnimation.play();
+            //     menuAnimation2.play();
+            //     menuAnimation3.play();
+            //     menuAnimation4.play();
+            //     menuAnimation5.play();
+            //     menuAnimation6.play();
                 
-            }
+            // }
+
+           
         });
 
 
@@ -151,28 +165,30 @@ export function buttonMouseEvents(){
         link.addEventListener("mouseleave", e => {
             console.log("leave");
 
-            console.log(burgerBtn.classList.contains("selected"));
+            // console.log(burgerBtn.classList.contains("selected"));
+
+            gsap.to(infoButtonArray[i],{duration:.25, alpha:0});
 
           
-            if(!burgerBtn.classList.contains("selected")){
-                burgerTL.play();
-                menuAnimation.play();
-                menuAnimation2.reverse();
-                menuAnimation3.reverse();
-                menuAnimation4.reverse();
-                menuAnimation5.reverse();
-                menuAnimation6.reverse();
+            // if(!burgerBtn.classList.contains("selected")){
+            //     burgerTL.play();
+            //     // menuAnimation.play();
+            //     // menuAnimation2.reverse();
+            //     // menuAnimation3.reverse();
+            //     // menuAnimation4.reverse();
+            //     // menuAnimation5.reverse();
+            //     // menuAnimation6.reverse();
                 
                
                
                 
-            }
+            // }
             
-            e.preventDefault();
-            if(i != currentLink){
-                gsap.to(textArray[i], {duration: 0.25, ease: "none"});
+            // e.preventDefault();
+            // if(i != currentLink){
+            //     gsap.to(textArray[i], {duration: 0.25, ease: "none"});
                
-            }
+            // }
         });
     });
 
@@ -183,7 +199,7 @@ export function buttonMouseEvents(){
     let canISeeMenu = false;
 
     let burgerBtn = document.querySelector("#burger");
-    burgerBtn.addEventListener("mouseenter", e => {
+    burgerBtn.addEventListener("mouseenter", () => {
         console.log("burger mouse enter");
         // code for burger mouse leave..... 
         menuAnimation.play();
@@ -191,29 +207,33 @@ export function buttonMouseEvents(){
         
     })
 
-    burgerBtn.addEventListener("mouseleave", e => {
-        console.log("burger mouse leave");
+    burgerBtn.addEventListener("mouseleave", () => {
+       
         // code for burger mouse leave..... 
-        menuAnimation.reverse();
-        burgerTL.reverse();
+        // menuAnimation.reverse();
+      
+        if(canISeeMenu === false){
+            console.log("burger mouse leave");
+            burgerTL.reverse();
+        }
     })
 
-    burgerBtn.addEventListener("click", e => {
+    burgerBtn.addEventListener("click", () => {
         console.log("burger click");
 
         if(canISeeMenu === false){
             gsap.to(nav,{x:0});
-            canISeeMenu = true;
+            
             menuAnimation.play();
-           
-           
             burgerTL.play();
+            canISeeMenu = true;
         }else{
             gsap.to(nav,{x:nav.offsetWidth});
-            canISeeMenu = false;
+            
             menuAnimation.reverse();
             
             burgerTL.reverse();
+            canISeeMenu = false;
         }
         
         // code for burger mouse leave..... 
