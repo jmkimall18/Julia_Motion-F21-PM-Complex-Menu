@@ -589,6 +589,16 @@ header > div #nav-container ul li {
   header > div #nav-container ul li h4 {
     display: none;
   }
+  header > div #nav-container ul li button {
+    background-color: transparent;
+    color: black;
+    font-family: "Work Sans";
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: 0.25s;
+    position: absolute;
+    cursor: pointer;
+  }
 }
 header > div #nav-container ul #card-1 {
   background-color: #fddbae;

@@ -78,6 +78,7 @@ header{
                     display: flex;
                     justify-content: flex-end;
                     height: 100%;
+                    
                 }
 
                 li{
@@ -101,6 +102,28 @@ header{
                         h4{
                             display: none;
                         }
+
+                        button {
+                                
+                            background-color: transparent;
+                            color: black;
+                            font-family: 'Work Sans';
+                            font-size: rem-calc(18);
+                            text-decoration: none;
+                            transition: 0.25s;
+                            position: absolute;
+                            cursor: pointer;
+                            
+
+                            // &:hover,
+                            // &:active {
+                            // color:#5e4c30;
+                            //  font-size: rem-calc(30);
+                            //                     ;
+                            //                  }
+        
+                            
+                                         }
                     }
 
                 }
@@ -111,6 +134,7 @@ header{
 
                     @include lg{
                         padding-left: 50px;
+                        
                     }
 
 

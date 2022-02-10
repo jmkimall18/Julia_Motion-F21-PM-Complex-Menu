@@ -119,7 +119,8 @@ export function buttonClicks(){
     });
 }
 
-let infoButtonArray = gsap.utils.toArray(".card button");
+let infoButtonArray = gsap.utils.toArray("#card-1");
+
 
 for(var i = 0; i < infoButtonArray.length; i++){
 gsap.set(infoButtonArray[i],{alpha:0});
@@ -143,7 +144,8 @@ export function buttonMouseEvents(){
             console.log("enter");
             console.log(burgerBtn.classList.contains("selected"));
 
-            gsap.to(infoButtonArray[i],{duration:0.25, alpha:1});
+            gsap.to(infoButtonArray[i],{duration:0.25, alpha:1,background:"#FCF9F4"});
+            
 
           
             // if(!burgerBtn.classList.contains("selected")){
@@ -167,7 +169,7 @@ export function buttonMouseEvents(){
 
             // console.log(burgerBtn.classList.contains("selected"));
 
-            gsap.to(infoButtonArray[i],{duration:.25, alpha:0});
+            gsap.to(infoButtonArray[i],{alpha:2,background:"#fddbae"});
 
           
             // if(!burgerBtn.classList.contains("selected")){
