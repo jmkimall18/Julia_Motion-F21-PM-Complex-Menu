@@ -144,6 +144,10 @@ header{
                     padding-right: 30px;
                     height: 100px;
 
+                    @include lg {
+                        display: none;
+                    }
+
                    }
 
                     h3{
@@ -210,6 +214,9 @@ header{
                         padding-bottom: 40px;
                         
                         height: 100px;
+                        @include lg {
+                            display: none;
+                        }
     
                        }
 
@@ -268,6 +275,9 @@ header{
                         padding-bottom: 40px;
                         
                         height: 90px;
+                        @include lg {
+                            display: none;
+                        }
     
                        }
 
@@ -331,7 +341,10 @@ header{
                     svg{
 
                         padding-bottom: 80px;
-                       
+                        
+                        @include lg {
+                            display: none;
+                        }
                         
                         height: 45px;
     

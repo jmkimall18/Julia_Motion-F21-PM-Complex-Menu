@@ -614,6 +614,11 @@ header > div #nav-container ul #card-1 svg {
   padding-right: 30px;
   height: 100px;
 }
+@media (min-width: 992px) {
+  header > div #nav-container ul #card-1 svg {
+    display: none;
+  }
+}
 header > div #nav-container ul #card-1 h3 {
   color: black;
   font-family: "Work Sans";
@@ -655,6 +660,11 @@ header > div #nav-container ul #card-2 svg {
   padding-bottom: 40px;
   height: 100px;
 }
+@media (min-width: 992px) {
+  header > div #nav-container ul #card-2 svg {
+    display: none;
+  }
+}
 header > div #nav-container ul #card-2 h3 {
   color: black;
   font-family: "Work Sans";
@@ -694,6 +704,11 @@ header > div #nav-container ul #card-3 svg {
   padding-bottom: 40px;
   height: 90px;
 }
+@media (min-width: 992px) {
+  header > div #nav-container ul #card-3 svg {
+    display: none;
+  }
+}
 header > div #nav-container ul #card-3 h3 {
   color: black;
   font-family: "Work Sans";
@@ -729,6 +744,11 @@ header > div #nav-container ul #card-4 {
 header > div #nav-container ul #card-4 svg {
   padding-bottom: 80px;
   height: 45px;
+}
+@media (min-width: 992px) {
+  header > div #nav-container ul #card-4 svg {
+    display: none;
+  }
 }
 header > div #nav-container ul #card-4 h3 {
   color: black;

@@ -131,8 +131,8 @@ for(var i = 0; i < infoButtonArray.length; i++){
 gsap.set(infoButtonArray[i],{alpha:0});
 }
 
-for(var e = 0; e < Card2Array.length; e++){
-    gsap.set(Card2Array[e],{alpha:0});
+for(var i = 0; i < Card2Array.length; i++){
+    gsap.set(Card2Array[i],{alpha:0});
     }
 
 // let paraArray = ;
@@ -174,27 +174,7 @@ for(var e = 0; e < Card2Array.length; e++){
           
         });
 
-        link.addEventListener("mouseenter", () => {
-
-            console.log("enter");
-
-
-            gsap.to(Card2Array[e],{duration:0.25,background:"#FCF9F4"});
-            
-           
-           
-        });
-
-
-       
-        link.addEventListener("mouseleave", () => {
-            console.log("leave");
-
-            gsap.to(Card2Array[e],{background:"#fddbae"});
-           
-            
-          
-        });
+        
 
 
 
