@@ -37,23 +37,23 @@ export const burgerTL = new gsap.timeline({paused:true});
 
 export const menuAnimation = new gsap.timeline({paused:true});
 
-export const menuAnimation2 = new gsap.timeline({paused:true});
+// export const menuAnimation2 = new gsap.timeline({paused:true});
 
-export const menuAnimation3 = new gsap.timeline({paused:true});
+// export const menuAnimation3 = new gsap.timeline({paused:true});
 
-export const menuAnimation4 = new gsap.timeline({paused:true});
+// export const menuAnimation4 = new gsap.timeline({paused:true});
 
-export const menuAnimation5 = new gsap.timeline({paused:true});
+// export const menuAnimation5 = new gsap.timeline({paused:true});
 
-export const menuAnimation6 = new gsap.timeline({paused:true});
+// export const menuAnimation6 = new gsap.timeline({paused:true});
 
 
 
 // menuAnimation2.to("#card-1",{background:"#5e4c30"})
-menuAnimation2.to("#card-1",{background:"#FCF9F4"})
-menuAnimation3.to("#card-2",{background: "#FCF9F4"})
-menuAnimation4.to("#card-3",{background: "#FCF9F4"})
-menuAnimation5.to("#card-4",{background: "#FCF9F4"})
+// menuAnimation2.to("#card-1",{background:"#FCF9F4"})
+// menuAnimation3.to("#card-2",{background: "#FCF9F4"})
+// menuAnimation4.to("#card-3",{background: "#FCF9F4"})
+// menuAnimation5.to("#card-4",{background: "#FCF9F4"})
 
 
 
@@ -119,79 +119,93 @@ export function buttonClicks(){
     });
 }
 
-let infoButtonArray = gsap.utils.toArray("#card-1");
 
+
+
+
+
+let infoButtonArray = gsap.utils.toArray("#card-1" );
+let Card2Array = gsap.utils.toArray("#card-2" );
 
 for(var i = 0; i < infoButtonArray.length; i++){
 gsap.set(infoButtonArray[i],{alpha:0});
 }
 
+for(var e = 0; e < Card2Array.length; e++){
+    gsap.set(Card2Array[e],{alpha:0});
+    }
+
 // let paraArray = ;
 
 
-export function buttonMouseEvents(){
+ export function buttonMouseEvents(){
 
     console.log(navLinks.length);
 
     navLinks.forEach((link, i) => {
 
 
-
-
-      
         link.addEventListener("mouseenter", () => {
 
             console.log("enter");
-            console.log(burgerBtn.classList.contains("selected"));
 
-            gsap.to(infoButtonArray[i],{duration:0.25, alpha:1,background:"#FCF9F4"});
+
+            gsap.to(infoButtonArray[i],{duration:0.25,background:"#FCF9F4"});
             
-
-          
-            // if(!burgerBtn.classList.contains("selected")){
-            //     burgerTL.play();
-            //     menuAnimation.play();
-            //     menuAnimation2.play();
-            //     menuAnimation3.play();
-            //     menuAnimation4.play();
-            //     menuAnimation5.play();
-            //     menuAnimation6.play();
-                
-            // }
-
+            // gsap.to(Card2Array[i],{duration:0.25,background:"#FCF555"});
+            gsap.to("h3",{duration:0.25 ,scale:1.1, rotation:30, color:"#5e4c30"});
+            gsap.to("h4",{duration: 1, y:"0",})
+            gsap.to("svg",{duration: .25,opacity: 0, ease:"fadein"})
            
         });
 
 
        
-        link.addEventListener("mouseleave", e => {
+        link.addEventListener("mouseleave", () => {
             console.log("leave");
 
-            // console.log(burgerBtn.classList.contains("selected"));
-
-            gsap.to(infoButtonArray[i],{alpha:2,background:"#fddbae"});
-
-          
-            // if(!burgerBtn.classList.contains("selected")){
-            //     burgerTL.play();
-            //     // menuAnimation.play();
-            //     // menuAnimation2.reverse();
-            //     // menuAnimation3.reverse();
-            //     // menuAnimation4.reverse();
-            //     // menuAnimation5.reverse();
-            //     // menuAnimation6.reverse();
-                
-               
-               
-                
-            // }
+            gsap.to(infoButtonArray[i],{background:"#fddbae"});
+           
+            // gsap.to(Card2Array[i],{background:"#fde3be", altha: 1});
+            gsap.to("h3",{duration:0.25, scale:0, rotation:0 });
+            gsap.to("h4",{duration: 1, y:"800"})
+            gsap.to("svg",{duration: .25,opacity: 1, ease:"fadein"})
             
-            // e.preventDefault();
-            // if(i != currentLink){
-            //     gsap.to(textArray[i], {duration: 0.25, ease: "none"});
-               
-            // }
+          
         });
+
+        link.addEventListener("mouseenter", () => {
+
+            console.log("enter");
+
+
+            gsap.to(Card2Array[e],{duration:0.25,background:"#FCF9F4"});
+            
+           
+           
+        });
+
+
+       
+        link.addEventListener("mouseleave", () => {
+            console.log("leave");
+
+            gsap.to(Card2Array[e],{background:"#fddbae"});
+           
+            
+          
+        });
+
+
+
+
+
+
+
+
+
+
+
     });
 
     
@@ -238,13 +252,43 @@ export function buttonMouseEvents(){
             canISeeMenu = false;
         }
         
-        // code for burger mouse leave..... 
-        
        
     })
 
 }
 
+
+// if(!burgerBtn.classList.contains("selected")){
+            //     burgerTL.play();
+            //     menuAnimation.play();
+            //     menuAnimation2.play();
+            //     menuAnimation3.play();
+            //     menuAnimation4.play();
+            //     menuAnimation5.play();
+            //     menuAnimation6.play();
+                
+            // }
+
+
+              // if(!burgerBtn.classList.contains("selected")){
+            //     burgerTL.play();
+            //     // menuAnimation.play();
+            //     // menuAnimation2.reverse();
+            //     // menuAnimation3.reverse();
+            //     // menuAnimation4.reverse();
+            //     // menuAnimation5.reverse();
+            //     // menuAnimation6.reverse();
+                
+               
+               
+                
+            // }
+            
+            // e.preventDefault();
+            // if(i != currentLink){
+            //     gsap.to(textArray[i], {duration: 0.25, ease: "none"});
+               
+            // }
 
 
 
