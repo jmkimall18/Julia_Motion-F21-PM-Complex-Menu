@@ -140,8 +140,8 @@ header{
                    svg{
 
                     padding-bottom: 40px;
+                    padding-left: 20px;
                     
-                    padding-right: 30px;
                     height: 100px;
 
                     @include lg {
@@ -273,7 +273,7 @@ header{
                     svg{
 
                         padding-bottom: 40px;
-                        
+                        padding-left: 20px;
                         height: 90px;
                         @include lg {
                             display: none;
@@ -340,7 +340,7 @@ header{
 
                     svg{
 
-                        padding-bottom: 80px;
+                        padding-bottom: 90px;
                         
                         @include lg {
                             display: none;

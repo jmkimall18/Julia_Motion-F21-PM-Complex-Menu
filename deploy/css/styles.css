@@ -611,7 +611,7 @@ header > div #nav-container ul #card-1 {
 }
 header > div #nav-container ul #card-1 svg {
   padding-bottom: 40px;
-  padding-right: 30px;
+  padding-left: 20px;
   height: 100px;
 }
 @media (min-width: 992px) {
@@ -702,6 +702,7 @@ header > div #nav-container ul #card-3 {
 }
 header > div #nav-container ul #card-3 svg {
   padding-bottom: 40px;
+  padding-left: 20px;
   height: 90px;
 }
 @media (min-width: 992px) {
@@ -742,7 +743,7 @@ header > div #nav-container ul #card-4 {
   padding-left: 20px;
 }
 header > div #nav-container ul #card-4 svg {
-  padding-bottom: 80px;
+  padding-bottom: 90px;
   height: 45px;
 }
 @media (min-width: 992px) {
