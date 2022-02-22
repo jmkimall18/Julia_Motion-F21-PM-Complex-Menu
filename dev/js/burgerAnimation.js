@@ -7,6 +7,7 @@ gsap.registerPlugin(DrawSVGPlugin, ScrambleTextPlugin);
 // const burgerBtn = document.querySelector("#burger-container");
 
 gsap.set(".burger-lines",{transformOrigin:"center"})
+gsap.set("button",{transformOrigin:"center"})
 gsap.set(".burger",{transformOrigin:"",duration:0.25, scaleY:6})
 gsap.set("#outline2",{drawSVG: "0%"})
 
@@ -157,6 +158,7 @@ for(var i = 0; i < Card2Array.length; i++){
             gsap.to("h3",{duration:0.25 ,scale:1.1, rotation:30, color:"#5e4c30"});
             gsap.to("h4",{duration: 1, y:"0", alpha:1})
             gsap.to("svg",{duration: .25,opacity: 0, ease:"fadein"})
+          
 
             
            
