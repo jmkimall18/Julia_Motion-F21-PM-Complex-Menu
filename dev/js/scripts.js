@@ -6,32 +6,31 @@
 // import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 import {scrollPage} from "./pageScroll"
-import {demoThing} from"./scrollAnimation"
+// import {demoThing} from"./scrollAnimation"
 import {photoTrigger} from"./scrollAnimation"
 import {photoTrigger1} from"./scrollAnimation"
 import {photoTrigger2} from"./scrollAnimation"
 import {photoTrigger3} from"./scrollAnimation"
 import {photoTrigger4} from"./scrollAnimation"
-import { burgerTL } from "./burgerAnimation"
+
 
 // import {demo2} from "./burgerAnimation"
 import { displayWindowSize } from "./mobileResizing.js";
 import { buttonClicks, buttonMouseEvents } from "./burgerAnimation"
 // import {moveMenuOnLoad} from "./mobileMenu";
 
-demoThing ();
+
 window.addEventListener('load', function(){
 
     displayWindowSize();
     buttonMouseEvents();
     buttonClicks();
-    demoThing();
     photoTrigger ();
     photoTrigger1 ();
     photoTrigger2 ();
     photoTrigger3 ();
     photoTrigger4 ();
-    burgerTL ();
+    // burgerTL ();
     // moveMenuOnLoad ();
     scrollPage ();
     // demo2();
@@ -67,7 +66,7 @@ window.addEventListener('load', function(){
 
 // for (const button of navButtons){
 //    button.addEventListener("click", checkScrolling);
-//     button.addEventListener("click", openCloseMenu);
+    
 // }
 
 

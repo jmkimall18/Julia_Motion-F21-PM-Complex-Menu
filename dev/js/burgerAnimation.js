@@ -7,9 +7,8 @@ gsap.registerPlugin(DrawSVGPlugin, ScrambleTextPlugin);
 // const burgerBtn = document.querySelector("#burger-container");
 
 gsap.set(".burger-lines",{transformOrigin:"center"})
-gsap.set("button",{transformOrigin:"center"})
-gsap.set(".burger",{transformOrigin:"",duration:0.25, scaleY:6})
-gsap.set("#outline2",{drawSVG: "0%"})
+// gsap.set(".burger",{transformOrigin:"",duration:0.25, scaleY:6})
+// gsap.set("#outline2",{drawSVG: "0%"})
 
 
 
@@ -38,24 +37,7 @@ export const burgerTL = new gsap.timeline({paused:true});
 
 export const menuAnimation = new gsap.timeline({paused:true});
 
-// export const menuAnimation2 = new gsap.timeline({paused:true});
-
-// export const menuAnimation3 = new gsap.timeline({paused:true});
-
-// export const menuAnimation4 = new gsap.timeline({paused:true});
-
-// export const menuAnimation5 = new gsap.timeline({paused:true});
-
-// export const menuAnimation6 = new gsap.timeline({paused:true});
-
-
-
-// menuAnimation2.to("#card-1",{background:"#5e4c30"})
-// menuAnimation2.to("#card-1",{background:"#FCF9F4"})
-// menuAnimation3.to("#card-2",{background: "#FCF9F4"})
-// menuAnimation4.to("#card-3",{background: "#FCF9F4"})
-// menuAnimation5.to("#card-4",{background: "#FCF9F4"})
-
+var canISeeMenu = false;
 
 
 // menuAnimation6.to("h3",{scale:1.1, rotation:30, color:"#5e4c30", y:"-=200"})
@@ -76,45 +58,58 @@ gsap.set(".burger-lines",{transformOrigin:"right center"});
 
 
 
-let textArray = gsap.utils.toArray(".connect");
+// let textArray = gsap.utils.toArray(".connect");
+// var textArray = document.querySelectorAll(".connect");
 let navLinks = gsap.utils.toArray("nav .card");
-let currentLink = 0;
+// let currentLink = 1;
 
 
-function menuSetUp(){
-	navLinks.forEach((link, i) => {
-		if(i !== 0){
-			gsap.set(textArray[i],{scaleX:0})
+// console.log(textArray.length +" text array");
+// console.log(navLinks.length + "nav links");
+
+// function menuSetUp(){
+// 	navLinks.forEach((link, i) => {
+// 		if(i !== 0){
+// 			// gsap.set(textArray[i],{});
             
-		}
-	});
+// 		}
+// 	});
 	
-}
+// }
 
 
 export function buttonClicks(){
 
     
-	console.log("clicks");
-	menuSetUp();
+	console.log("clicks!!!");
+	// menuSetUp();
 
     navLinks.forEach((link, i) => {
-        link.addEventListener("click", e => {
+        link.addEventListener("click", () => {
             
-            e.preventDefault();
+            // // e.preventDefault();
 
-            // console.log(currentLink);
+            
+
+            
+            burgerTL.reverse();
+            canISeeMenu = true;
+
+            console.log("card click");
           
             gsap.to(window, {scrollTo: i * innerHeight});
 
-            console.log(i);
-            gsap.to(textArray[i], {duration: 0.25, ease: "none"});
+            canISeeMenu = false;
+
+            // // console.log(i);
+            menuAnimation.reverse();
+            // gsap.to(navLinks[i], {duration: 0.25, ease: "none"});
 
 
-            gsap.to(textArray[currentLink], {duration: 0.25, ease: "none"});
+            // // gsap.to(navLinks[currentLink], {duration: 0.25, ease: "none"});
            
 
-            currentLink = i;
+            // currentLink = i;
           
         });
     });
@@ -126,7 +121,7 @@ export function buttonClicks(){
 
 
 let infoButtonArray = gsap.utils.toArray(".card" );
-let Card2Array = gsap.utils.toArray("#card-2" );
+// let Card2Array = gsap.utils.toArray("#card-2" );
 
 let colorArray= ["#fddbae", "#fde3be", "#fcebd1", "#FFF3E1"]
 
@@ -134,11 +129,11 @@ for(var i = 0; i < infoButtonArray.length; i++){
 gsap.set(infoButtonArray[i],{alpha:0});
 }
 
-for(var i = 0; i < Card2Array.length; i++){
-    gsap.set(Card2Array[i],{alpha:0});
-    }
+// for(var i = 0; i < Card2Array.length; i++){
+//     gsap.set(Card2Array[i],{alpha:0});
+//     }
 
-// let paraArray = ;
+let paraArray = ["#svg1", "#svg2", "#svg3", "#svg4" ];
 
 
  export function buttonMouseEvents(){
@@ -153,11 +148,11 @@ for(var i = 0; i < Card2Array.length; i++){
             console.log("enter");
 
 
-            gsap.to(infoButtonArray[i],{duration:0.25,background:"#FCF9F4"});
-            // gsap.to(Card2Array[i],{duration:0.25,background:"#FCF555"});
+            gsap.to(infoButtonArray[i],{duration:0.1,background:"#FCF9F4"});
+            gsap.to(paraArray[i],{duration: 1, y:"0", alpha:1});
             gsap.to("h3",{duration:0.25 ,scale:1.1, rotation:30, color:"#5e4c30"});
             gsap.to("h4",{duration: 1, y:"0", alpha:1})
-            gsap.to("svg",{duration: .25,opacity: 0, ease:"fadein"})
+            // gsap.to("#svg1",{duration: 1, y:"0", alpha:1})
           
 
             
@@ -169,11 +164,12 @@ for(var i = 0; i < Card2Array.length; i++){
         link.addEventListener("mouseleave", () => {
             console.log("leave");
 
-            gsap.to(infoButtonArray[i],{background:colorArray[i]});
-            // gsap.to(Card2Array[i],{background:"#fde3be"});
+            gsap.to(infoButtonArray[i],{duration:0.1,background:colorArray[i]});
             gsap.to("h3",{duration:0.25, scale:0, rotation:0 });
             gsap.to("h4",{duration: 1, y:"800"})
-            gsap.to("svg",{duration: .25,opacity: 1, ease:"fadein"})
+            gsap.to(paraArray[i],{duration: 1, y:"-800"});
+            // gsap.to("#svg1",{duration: 1, y:"-800"})
+            // gsap.to("#svg1",{opacity: 1, ease:"fadein"})
             
           
         });
@@ -188,7 +184,7 @@ for(var i = 0; i < Card2Array.length; i++){
 
     let nav = document.querySelector("nav");
 
-    let canISeeMenu = false;
+ 
 
     let burgerBtn = document.querySelector("#burger");
     burgerBtn.addEventListener("mouseenter", () => {
@@ -206,6 +202,7 @@ for(var i = 0; i < Card2Array.length; i++){
       
         if(canISeeMenu === false){
             console.log("burger mouse leave");
+            menuAnimation.reverse();
             burgerTL.reverse();
         }
     })

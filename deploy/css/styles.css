@@ -610,7 +610,7 @@ header > div #nav-container ul #card-1 {
   }
 }
 header > div #nav-container ul #card-1 svg {
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   padding-left: 20px;
   height: 100px;
 }
@@ -657,7 +657,7 @@ header > div #nav-container ul #card-2 {
   }
 }
 header > div #nav-container ul #card-2 svg {
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   height: 100px;
 }
 @media (min-width: 992px) {
@@ -701,7 +701,7 @@ header > div #nav-container ul #card-3 {
   }
 }
 header > div #nav-container ul #card-3 svg {
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   padding-left: 20px;
   height: 90px;
 }
@@ -743,7 +743,7 @@ header > div #nav-container ul #card-4 {
   padding-left: 20px;
 }
 header > div #nav-container ul #card-4 svg {
-  padding-bottom: 80px;
+  padding-bottom: 100px;
   height: 45px;
 }
 @media (min-width: 992px) {
