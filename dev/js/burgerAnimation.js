@@ -83,7 +83,7 @@ export function buttonClicks(){
     
 	console.log("clicks!!!");
 	// menuSetUp();
-
+    
     navLinks.forEach((link, i) => {
         link.addEventListener("click", () => {
             
@@ -93,6 +93,7 @@ export function buttonClicks(){
 
             
             burgerTL.reverse();
+            
             canISeeMenu = true;
 
             console.log("card click");
@@ -101,8 +102,8 @@ export function buttonClicks(){
 
             canISeeMenu = false;
 
-            // // console.log(i);
-            menuAnimation.reverse();
+            // console.log(i);
+            
             // gsap.to(navLinks[i], {duration: 0.25, ease: "none"});
 
 
@@ -213,13 +214,13 @@ let paraArray = ["#svg1", "#svg2", "#svg3", "#svg4" ];
         if(canISeeMenu === false){
             gsap.to(nav,{x:0});
             
-            menuAnimation.play();
+            // menuAnimation.play();
             burgerTL.play();
             canISeeMenu = true;
         }else{
             gsap.to(nav,{x:nav.offsetWidth});
             
-            menuAnimation.reverse();
+            // menuAnimation.reverse();
             
             burgerTL.reverse();
             canISeeMenu = false;
